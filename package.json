@@ -1,0 +1,95 @@
+{
+  "name": "dms-ts",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@types/jest": "24.0.23",
+    "@types/node": "^12.12.11",
+    "@types/react": "16.9.11",
+    "@types/react-dom": "16.9.4",
+    "antd": "^3.25.2",
+    "babel-plugin-import": "^1.12.2",
+    "babel-polyfill": "^6.26.0",
+    "css-loader": "1.0.1",
+    "customize-cra": "^0.9.1",
+    "less": "^3.10.3",
+    "less-loader": "^5.0.0",
+    "react": "^16.12.0",
+    "react-app-polyfill": "^1.0.4",
+    "react-app-rewired": "^2.1.5",
+    "react-dom": "^16.12.0",
+    "react-scripts": "3.0.1",
+    "typescript": "3.7.2"
+  },
+  "scripts": {
+    "start": "react-app-rewired start --mode php",
+    "build": "react-app-rewired build",
+    "test": "react-app-rewired test",
+    "eject": "react-scripts eject"
+  },
+  "config-overrides-path": "config/config-overrides.js",
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all",
+      "ie 11"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version",
+      "ie 11"
+    ]
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^8.2.0",
+    "@commitlint/config-conventional": "^8.2.0",
+    "@types/react-router-dom": "^5.1.2",
+    "autoprefixer": "^9.7.1",
+    "axios": "^0.19.0",
+    "cz-customizable": "^6.2.0",
+    "husky": "^3.1.0",
+    "lint-staged": "^9.4.3",
+    "moment": "^2.24.0",
+    "node-sass": "^4.13.0",
+    "postcss-loader": "^3.0.0",
+    "prettier": "^1.19.1",
+    "react-router-dom": "^5.1.2",
+    "react-zmage": "^0.8.5",
+    "sass-loader": "^8.0.0",
+    "sass-resources-loader": "^2.0.1",
+    "stylelint": "^12.0.0",
+    "stylelint-config-css-modules": "^2.0.0",
+    "stylelint-config-standard": "^19.0.0",
+    "stylelint-order": "^3.1.1",
+    "typings-for-css-modules-loader": "^1.7.0"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged",
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+    }
+  },
+  "lint-staged": {
+    "src/**/*.{js,jsx,ts,tsx,json,css,scss,md}": [
+      "prettier --single-quote --write",
+      "git add"
+    ],
+    "src/**/*.css": "stylelint",
+    "src/**/*.scss": "stylelint --syntax=scss"
+  },
+  "commitlint": {
+    "extends": [
+      "@commitlint/config-conventional"
+    ]
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-customizable"
+    }
+  }
+}
